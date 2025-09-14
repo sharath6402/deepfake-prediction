@@ -1,4 +1,4 @@
-# 🔍 DeepFake Research Project
+# 🔍 DeepFake Project
 
 > **Project short description:**  
 > This repository contains the code, models, documentation and evaluation assets for a research project exploring *deep generative models for face synthesis and manipulation* (commonly referred to as "deepfakes"). The aim of this work is academic: to analyze model behaviour, evaluate detection strategies, study ethical implications, and propose mitigation techniques.
@@ -40,5 +40,4 @@ If you plan to use this project for anything other than local research, contact 
 
 ---
 
-## 📁 Repo Structure (typical)
 
