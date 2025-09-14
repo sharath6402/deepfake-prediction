@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='style/home.css')}}">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedan:ital@0;1&display=swap');
+  </style>
+</head>
+
+<body>
+  <nav>
+    Deep fake detection
+  </nav>
+  <div class="heroSection">
+    <div class="left">
+      <h1>
+        Is everything<br />
+                you find online<br />
+                real?
+      </h1>
+      <p>Explore the authenticity of online content. Upload a video to verify its validity and ensure reliability
+        for informed decisions.</p>
+      <div>
+        <form action="/upload" method="post" id="form" enctype="multipart/form-data">
+          <input required id="video" type="file" name="video" accept="video/*" id=""
+                        onchange="handleChange(event)"
+                    >
+          <button type="button" onclick="handlerBtnClick()">Upload Here...</button>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <!-- <video autoplay loop muted src="../static/videos/Deepfake_website_video.mp4"></video> -->
+      <img src="../static/image/deepfake_img.gif" loading="lazy" />
+    </div>
+  </div>
+
+  <script defer>
+    function handlerBtnClick() {
+            let video = document.getElementById("video")
+            video.click()
+        }
+        
+        function handleChange(event) {
+            const files = event?.target?.files[0]
+            let form = document.getElementById("form")
+                if((files?.size / 1048576) >= 100 ){
+                    alert("max limit is 100MB!!!")
+                    const inputVideoTag = document.getElementById(video)
+                    inputVideoTag.value = ""
+                    return
+                }
+                form.submit()
+        }
+  </script>
+</body>
+
+</html>
